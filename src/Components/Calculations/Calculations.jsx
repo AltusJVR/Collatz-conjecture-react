@@ -5,7 +5,7 @@ import "./Calculations.scss";
 const Calculations = (props) => {
   const { HasSeed, SeedNum, calcArray } = props;
 
-  if (!HasSeed) {
+  if (!HasSeed || !SeedNum) {
     return (
       <section>
         <h1>Please enter a seed number.</h1>
@@ -16,7 +16,7 @@ const Calculations = (props) => {
     return (
       <section>
         <h1>Calculations</h1>
-        <h3>Seednumber: {SeedNum}</h3>
+        <h3>n: {SeedNum}</h3>
         <h3>Total Iterations: {calcArray.length}</h3>
         <div className="calculations">
           {calcArray.map((num, index) => {
