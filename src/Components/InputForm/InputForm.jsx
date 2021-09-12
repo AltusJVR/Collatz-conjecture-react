@@ -21,7 +21,7 @@ const InputForm = (props) => {
           name="SeedNumber"
           id="SeedNumber"
           onChange={getSeedNum}
-          required="true"
+          required={true}
         />
         <button type="submit">Calculate</button>
       </form>
