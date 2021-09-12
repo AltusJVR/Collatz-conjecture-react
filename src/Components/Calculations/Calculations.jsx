@@ -17,12 +17,14 @@ const Calculations = (props) => {
       <section>
         <h1>Calculations</h1>
         <h3>Seednumber: {SeedNum}</h3>
+        <h3>Total Iterations: {calcArray.length}</h3>
         <div className="calculations">
           {calcArray.map((num, index) => {
             return (
               <div className="calc" key={index}>
                 <h4>X: {num}</h4>
                 <p>{mod(num)}</p>
+                <p>Iteration: {index}</p>
                 <span className="arrow">→ {next(num)}</span>
               </div>
             );
