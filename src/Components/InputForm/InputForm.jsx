@@ -13,7 +13,7 @@ const InputForm = (props) => {
         }}
       >
         <label htmlFor="SeedNumber"></label>
-        Seednumber:
+        Seednumber: (min 2, max 5000)
         <input
           min="2"
           max="5000"
@@ -21,6 +21,7 @@ const InputForm = (props) => {
           name="SeedNumber"
           id="SeedNumber"
           onChange={getSeedNum}
+          required="true"
         />
         <button type="submit">Calculate</button>
       </form>
