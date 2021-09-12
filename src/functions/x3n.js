@@ -2,7 +2,6 @@ const x3n = async (x) => {
   let n = parseInt(x);
   const startingNumber = parseInt(x);
   if (n === isNaN) {
-    console.log("Not a number");
     return "Not a number";
   } else {
     let calculatedArray = [startingNumber];
