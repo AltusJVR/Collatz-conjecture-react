@@ -23,7 +23,6 @@ const InputForm = (props) => {
           }}
           required={true}
         />
-        <button type="submit">Calculate</button>
       </form>
     </>
   );
