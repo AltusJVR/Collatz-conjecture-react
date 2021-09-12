@@ -1,25 +1,28 @@
+import "./Form.scss";
+
 const InputForm = (props) => {
-  const { getSeedNum, submitTrue } = props;
+  const { getSeedNum, submitTrue, calculate } = props;
 
   return (
     <>
       <form
-        onSubmit={(e) => {
+        onSubmit={async (e) => {
           e.preventDefault();
-          submitTrue();
+          await submitTrue();
+          await calculate();
         }}
       >
-        <label htmlFor="SeedNumber">
-          <input
-            min="2"
-            max="5000"
-            type="number"
-            name="SeedNumber"
-            id="SeedNumber"
-            onChange={getSeedNum}
-          />
-          <button type="submit">Calculate</button>
-        </label>
+        <label htmlFor="SeedNumber"></label>
+        Seednumber:
+        <input
+          min="2"
+          max="5000"
+          type="number"
+          name="SeedNumber"
+          id="SeedNumber"
+          onChange={getSeedNum}
+        />
+        <button type="submit">Calculate</button>
       </form>
     </>
   );

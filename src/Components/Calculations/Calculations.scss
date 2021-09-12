@@ -1,0 +1,37 @@
+.calculations {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  width: 100%vw;
+  height: auto;
+  gap: 20px;
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.calc {
+  --box-size: 15vw;
+  width: var(--box-size);
+  height: var(--box-size);
+  border: 2px solid rgb(20, 190, 139);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 1200px) {
+    --box-size: 30vw;
+  }
+}
+
+.calc:last-of-type {
+  border: 2px solid red;
+}
+
+.calc:first-of-type {
+  border: 2px solid rgb(214, 182, 37);
+}
+
+.arrow {
+  font-size: 1.2em;
+}
