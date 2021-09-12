@@ -1,15 +1,12 @@
 import "./Form.scss";
 
 const InputForm = (props) => {
-  const { getSeedNum, submitTrue, calculate } = props;
-
+  const { calculate, setseedNum } = props;
   return (
     <>
       <form
         onSubmit={async (e) => {
           e.preventDefault();
-          await submitTrue();
-          await calculate();
         }}
       >
         <label htmlFor="SeedNumber"></label>
@@ -20,7 +17,10 @@ const InputForm = (props) => {
           type="number"
           name="SeedNumber"
           id="SeedNumber"
-          onChange={getSeedNum}
+          onChange={(e) => {
+            calculate(e.target.value);
+            setseedNum(e.target.value);
+          }}
           required={true}
         />
         <button type="submit">Calculate</button>
