@@ -3,21 +3,20 @@ import { next } from "../../functions/mod";
 
 import "./Calculations.scss";
 const Calculations = (props) => {
-  const { HasSeed, SeedNum, calcArray } = props;
+  const { calcArray, seedNum } = props;
 
-  if (!HasSeed || !SeedNum) {
+  if (!calcArray) {
     return (
       <section>
         <h1>Please enter a seed number.</h1>
       </section>
     );
   }
-  if (SeedNum && HasSeed) {
+  if (calcArray) {
     return (
       <section>
         <h1>Calculations</h1>
-        <h3>n: {SeedNum}</h3>
-        <h3>Total Iterations: {calcArray.length}</h3>
+        <h3>n: {seedNum}</h3>
         <div className="calculations">
           {calcArray.map((num, index) => {
             return (
