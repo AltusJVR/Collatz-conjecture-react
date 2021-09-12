@@ -9,20 +9,12 @@ import Calculations from "./Components/Calculations/Calculations";
 import { useState } from "react";
 
 function App() {
-  const [SeedNum, setSeedNum] = useState(false);
-  const [HasSeed, setHasSeed] = useState(false);
+  // const [SeedNum, setSeedNum] = useState(false);
   const [calcArray, setCalcArray] = useState([]);
+  const [seedNum, setseedNum] = useState(0);
 
-  const checkSubmitHandler = () => {
-    if (!SeedNum) {
-      setHasSeed(false);
-    } else {
-      setHasSeed(true);
-    }
-  };
-
-  const calculateArray = async () => {
-    let array = await x3n(SeedNum);
+  const calculateArray = async (x) => {
+    let array = await x3n(x);
     setCalcArray(array);
   };
 
@@ -47,16 +39,9 @@ function App() {
         <li>if( n === 1) stop</li>
       </ul>
 
-      <InputForm
-        getSeedNum={(e) => setSeedNum(e.target.value)}
-        seedSet={(e) => {
-          setHasSeed(true);
-        }}
-        submitTrue={() => checkSubmitHandler()}
-        calculate={() => calculateArray()}
-      />
+      <InputForm calculate={calculateArray} setseedNum={setseedNum} />
 
-      <Calculations HasSeed={HasSeed} SeedNum={SeedNum} calcArray={calcArray} />
+      <Calculations calcArray={calcArray} seedNum={seedNum} />
     </div>
   );
 }
