@@ -40,9 +40,13 @@ function App() {
         the previous term is odd, the next term is 3 times the previous term plus 1. The conjecture
         is that no matter what value of <strong>n</strong>, the sequence will always reach 1.
       </p>
-      <p>if (n % 2 === 0) = n / 2</p>
-      <p>if (n % 2 !== 0) = n * 3 + 1</p>
-      <p>if( n === 1) stop</p>
+
+      <ul>
+        <li>if (n % 2 === 0) = n / 2</li>
+        <li>if (n % 2 !== 0) = n * 3 + 1</li>
+        <li>if( n === 1) stop</li>
+      </ul>
+
       <InputForm
         getSeedNum={(e) => setSeedNum(e.target.value)}
         seedSet={(e) => {

@@ -13,3 +13,7 @@ a {
   text-decoration: none;
   color: rgb(3, 71, 51);
 }
+
+li + li {
+  margin-top: 1.2em;
+}
