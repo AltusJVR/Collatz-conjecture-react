@@ -1,4 +1,4 @@
-const x3n = async (x) => {
+const x3n = (x) => {
   let n = parseInt(x);
   let calculatedArray = [n];
   while (n !== 1) {
