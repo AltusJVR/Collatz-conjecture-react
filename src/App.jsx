@@ -1,21 +1,45 @@
 // Functions
 import x3n from "./functions/x3n";
+import { sort, maxNum } from "./functions/sort";
 
 // Styles
 import "./App.scss";
 // Components
 import InputForm from "./Components/InputForm/InputForm";
 import Calculations from "./Components/Calculations/Calculations";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   // const [SeedNum, setSeedNum] = useState(false);
   const [calcArray, setCalcArray] = useState([]);
   const [seedNum, setseedNum] = useState(0);
+  const [showCalculations, setCalculations] = useState(false);
+  const [sortedArray, setSortedArray] = useState([]);
+  const [max, setMax] = useState(0);
+
+  useEffect(() => {
+    setSortedArray(sort(calcArray));
+    setMax(maxNum(calcArray));
+  }, [calcArray]);
+
+  const showCalc = (e) => {
+    if (calcArray && !showCalculations) {
+      setCalculations(true);
+    }
+    if (showCalculations) {
+      setCalculations(false);
+    }
+  };
 
   const calculateArray = async (x) => {
-    let array = await x3n(x);
-    setCalcArray(array);
+    let array = [];
+    if (!x) {
+      array = await x3n(2);
+      setCalcArray(array);
+    } else {
+      array = await x3n(x);
+      setCalcArray(array);
+    }
   };
 
   return (
@@ -39,9 +63,15 @@ function App() {
         <li>if( n === 1) stop</li>
       </ul>
 
-      <InputForm calculate={calculateArray} setseedNum={setseedNum} />
+      <InputForm calculate={calculateArray} setseedNum={setseedNum} showCalc={showCalc} />
 
-      <Calculations calcArray={calcArray} seedNum={seedNum} />
+      <Calculations
+        calcArray={calcArray}
+        seedNum={seedNum}
+        showCalc={showCalculations}
+        sortedArray={sortedArray}
+        max={max}
+      />
     </div>
   );
 }
