@@ -1,7 +1,8 @@
 import "./Form.scss";
 
 const InputForm = (props) => {
-  const { calculate, setseedNum } = props;
+  const { calculate, setseedNum, showCalc } = props;
+
   return (
     <>
       <form
@@ -23,6 +24,7 @@ const InputForm = (props) => {
           }}
           required={true}
         />
+        <button onClick={showCalc}>Show Iterations:</button>
       </form>
     </>
   );
