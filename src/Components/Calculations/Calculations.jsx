@@ -15,7 +15,9 @@ const Calculations = (props) => {
     return (
       <section className="calcSection">
         <h1>Iterations:</h1>
-        <h3>n: {seedNum}</h3>
+        <h3>
+          n: {seedNum} = {mod(seedNum)}
+        </h3>
         <h3>Total iterations: {calcArray.length}</h3>
         <h4>Highest n: {max}</h4>
         <div className="calculations">
