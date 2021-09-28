@@ -1,17 +1,25 @@
-import "./Form.scss";
-
+import styles from "./Form.module.scss";
+import Card from "../UI/Card";
+import Button from "../UI/Button";
 const InputForm = (props) => {
-  const { calculate, setseedNum, showCalc } = props;
+  const { calculate, setseedNum, showCalc, calcArray } = props;
+  let showCalcButton = <Button>No calculations</Button>;
+  if (calcArray.length > 0) {
+    showCalcButton = <Button onClick={showCalc}>Show calculations</Button>;
+  }
 
   return (
-    <>
+    <Card>
       <form
+        className={styles.form}
         onSubmit={async (e) => {
           e.preventDefault();
         }}
       >
-        <label htmlFor="SeedNumber"></label>
-        Seednumber: (min 2, max 5000)
+        <label className={styles.label} htmlFor="SeedNumber">
+          Seednumber: (min 2, max 5000)
+        </label>
+
         <input
           min="2"
           max="5000"
@@ -24,9 +32,9 @@ const InputForm = (props) => {
           }}
           required={true}
         />
-        <button onClick={showCalc}>Show Iterations:</button>
+        {showCalcButton}
       </form>
-    </>
+    </Card>
   );
 };
 
