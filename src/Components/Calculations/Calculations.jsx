@@ -1,9 +1,9 @@
 import mod from "../../functions/mod";
 import { next } from "../../functions/mod";
-
+import Chart from "../Chart/Chart";
 import "./Calculations.scss";
 const Calculations = (props) => {
-  const { calcArray, seedNum, showCalc, max } = props;
+  const { calcArray, seedNum, showCalc, max, sortedArray } = props;
   if (!seedNum) {
     return (
       <section className="calcSection">
@@ -20,6 +20,7 @@ const Calculations = (props) => {
         </h3>
         <h3>Total iterations: {calcArray.length}</h3>
         <h4>Highest n: {max}</h4>
+        <Chart calcArray={calcArray} max={max} />
         <div className="calculations">
           {calcArray.map((num, index) => {
             return (
