@@ -1,0 +1,6 @@
+@use "../../variables" as var;
+.card {
+  width: 100%;
+  padding: 1em;
+  border-radius: var.$border-radius;
+}
