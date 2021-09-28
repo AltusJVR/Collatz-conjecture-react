@@ -1,19 +1,27 @@
+@use "variables" as var;
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
 body {
+  font-family: "Ubuntu", sans-serif;
   min-height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow-x: hidden;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: var.$bg-dark;
+  color: var.$bg-clr;
 }
 
 a {
   font-size: 1.1em;
   text-decoration: none;
-  color: rgb(3, 71, 51);
+  color: inherit;
 }
 
 li + li {
   margin-top: 1.2em;
+}
+
+.lead {
+  color: var.$h-clr-1;
 }
