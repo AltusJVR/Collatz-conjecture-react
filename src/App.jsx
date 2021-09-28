@@ -47,7 +47,7 @@ function App() {
       <h1>Collatz conjecture</h1>
       <p>
         The{" "}
-        <strong>
+        <strong className="lead">
           <a href="https://en.wikipedia.org/wiki/Collatz_conjecture">Collatz conjecture</a>
         </strong>{" "}
         is a conjecture in mathematics that concerns sequences defined as follows: start with any
@@ -63,7 +63,12 @@ function App() {
         <li>if( n === 1) stop</li>
       </ul>
 
-      <InputForm calculate={calculateArray} setseedNum={setseedNum} showCalc={showCalc} />
+      <InputForm
+        calculate={calculateArray}
+        setseedNum={setseedNum}
+        showCalc={showCalc}
+        calcArray={calcArray}
+      />
 
       <Calculations
         calcArray={calcArray}
