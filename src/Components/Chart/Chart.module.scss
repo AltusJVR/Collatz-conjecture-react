@@ -45,9 +45,10 @@
   &:hover p {
     position: relative;
     opacity: 1;
-    top: -50px;
+    top: -45px;
     bottom: 100%;
-    left: 0;
-    display: block;
+    left: -30px;
+    display: inline-block;
+    margin: 0;
   }
 }

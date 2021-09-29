@@ -6,8 +6,16 @@ const ChartBar = (props) => {
     height = (value / max) * 100 + "%";
   }
 
+  let bg = "hsl(125, 50%, 50%)";
+
+  if (value) {
+    if (value === max) {
+      bg = "hsl(1, 50%, 50%)";
+    }
+  }
+
   return (
-    <div className={props.className} style={{ height: height }}>
+    <div className={props.className} style={{ height: height, backgroundColor: bg }}>
       <p>n: {value}</p>
     </div>
   );
