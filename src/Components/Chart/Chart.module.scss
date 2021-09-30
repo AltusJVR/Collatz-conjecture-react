@@ -15,8 +15,8 @@
 
 .chart__bar {
   position: relative;
-  --size: 0.55em;
-  flex-shrink: 2;
+  --size: 0.4em;
+  flex-shrink: 1;
   width: var(--size);
   margin: 0 0.2rem;
 
@@ -26,7 +26,8 @@
   position: relative;
   opacity: 0.5;
   font-size: 10px;
-
+  transition: height var.$animation-time ease-in, background-color var.$animation-time ease-in;
+  border-radius: var.$border-radius;
   p {
     background-color: darken(var.$bg-clr, 20%);
     cursor: none;
@@ -37,6 +38,7 @@
     color: var.$h-clr-3;
     width: max-content;
     z-index: 1;
+    transition: opacity var.$animation-time ease-in, top var.$animation-time ease-in;
   }
   &:hover {
     cursor: pointer;
@@ -48,7 +50,7 @@
     top: -45px;
     bottom: 100%;
     left: -30px;
-    display: inline-block;
     margin: 0;
+    display: flex;
   }
 }
