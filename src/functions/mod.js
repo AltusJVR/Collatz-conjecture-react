@@ -1,5 +1,4 @@
-// import x3n from "./x3n";
-
+// import x3n from "./x3n"
 const mod = (num) => {
   if (num % 2 === 0) {
     return "Even";
