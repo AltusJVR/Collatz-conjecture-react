@@ -18,10 +18,10 @@ const sort = (arr) => {
 };
 
 const maxNum = (arr) => {
-  let max = arr[0];
-  if (!arr) {
+  if (typeof arr !== "object") {
     return -1;
   } else {
+    let max = arr[0];
     arr.forEach((num) => {
       if (num > max) {
         max = num;
@@ -30,8 +30,5 @@ const maxNum = (arr) => {
     return max;
   }
 };
-// const testArray = [
-//   18, 9, 28, 14, 7, 22, 11, 34, 17, 5552, 26, 13, 40, 20, 10, 5, 16, 8, 4, 2, 30000,
-// ];
 
 export { maxNum, sort };

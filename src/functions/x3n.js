@@ -1,8 +1,9 @@
 const x3n = (x) => {
-  let n = parseInt(x);
+  let n = x;
   let calculatedArray = [n];
   while (n !== 1) {
     if (typeof n !== "number") {
+      calculatedArray = n;
       break;
     }
     if (n % 2 !== 0) {
