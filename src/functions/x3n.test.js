@@ -10,6 +10,10 @@ test("Test X3N+1 function returns the correct array", () => {
 });
 
 test("Test X3N+1 function with NaN", () => {
-  const array = x3n("a");
-  expect(array).toBe("a");
+  const string = x3n("c");
+  const boolean = x3n(false);
+  const array = x3n([1, 20, 5]);
+  expect(string).toBe("c");
+  expect(boolean).toBe(false);
+  expect(array).toEqual([1, 20, 5]);
 });
